@@ -11,9 +11,8 @@
 
 namespace mngr {
 
-Thread::Thread(std::string name, Action act)
-    : name_(name)
-    , action_(act) {
+Thread::Thread(std::string name)
+    : name_(name) {
 }
 
 Thread::Thread(Thread&& thrd) {
@@ -32,7 +31,7 @@ bool Thread:: pre_init() {
 }
 
 bool Thread::run() {
-    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     static int count = 0;
     count++;
     printf("Thread::run count:%d\n", count);

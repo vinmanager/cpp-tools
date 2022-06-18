@@ -27,7 +27,7 @@ class Thread {
   * @param name
   * @param act
   */
-  explicit Thread(std::string name = "Thread", Action act = Action::kDetach);
+  explicit Thread(std::string name = "Thread");
   explicit Thread(Action act);
   Thread(Thread&& thrd);
 
